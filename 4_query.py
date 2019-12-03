@@ -14,6 +14,10 @@ pprint.pprint(collection.find_one({'author': 'Maxsu'}))
 
 
 # 多个查询
+print('#' * 40)
+print(list(collection.find()))
+print('#' * 40)
+print(collection.find())
 for i in collection.find():  # 遍历所有查询 -> select *
     pprint.pprint(i)
 print('*' * 40)
