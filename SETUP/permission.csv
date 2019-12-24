@@ -1,0 +1,4 @@
+type,user_mng,line_mng,gui_mng,threshold_mng,shift_mng,pic_upload,update_time
+super_admin,1,1,1,1,1,1,0
+quality_admin,0,0,0,1,0,1,0
+production_admin,1,1,1,0,1,1,0

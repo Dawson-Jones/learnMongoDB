@@ -1,0 +1,5 @@
+user_name,user_pw,type,update_time
+super admin,123456,super_admin,0
+quality admin,123456,quality_admin,0
+production admin,123456,production_admin,0
+op0,123456,operator,0
