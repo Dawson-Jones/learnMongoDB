@@ -40,6 +40,25 @@ for i in collection.find({"name": {"$regex": "^j"}}, {"_id": 0}):
     pprint.pprint(i)
 print('*' * 40)
 
+# 查询键 by 值为 菜鸟教程 或键 title 值为 MongoDB 教程 的文档
+collection.find({
+    '$or': [
+        {'by': '菜鸟教程'},
+        {'title': 'MongoDB教程'}
+    ]
+})
+
+# AND 和 OR 联合使用
+""" where likes>50 AND (by = '菜鸟教程' OR title = 'MongoDB 教程') """
+
+collection.find({
+    "likes": {'$gt': 50},
+    '$or': [
+        {'by': '菜鸟教程'},
+        {'title': 'MongoDB教程'}
+    ]
+})
+
 
 # 查询到的数量
 # print("posts's author is Maxsu count is =", collection.find({"author": "Maxsu"}).count())  # 被下面的替代
