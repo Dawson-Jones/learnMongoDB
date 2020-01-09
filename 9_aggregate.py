@@ -1,6 +1,5 @@
 from base import collection
 
-
 """
 Data:
 
@@ -34,12 +33,10 @@ Data:
 """
 
 res = collection.aggregate([
-    {'$group':
-        {
-            '_id': '$by_user',
-            'num': {'$sum': 1}
-        }
-    },
+    {'$group': {
+        '_id': '$by_user',
+        'num': {'$sum': 1}
+    }},
     {'$sort': {'num': -1}},
     {'$limit': 2},
 ])
