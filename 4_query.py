@@ -6,11 +6,12 @@ MongoDB中执行的最基本的查询类型是find_one()。
 import pprint
 import datetime
 from base import collection
+from bson.objectid import ObjectId
 
 # 单个查询
-pprint.pprint(collection.find_one())
+# pprint.pprint(collection.find_one())
 # 指定查询的条件, 查询作者是“Maxsu”的文档
-pprint.pprint(collection.find_one({'author': 'Maxsu'}))
+pprint.pprint(collection.find_one({'description': 'MongoDB is no sql database'}, {'by_user': 1}))
 
 
 # 多个查询

@@ -1,6 +1,7 @@
 import datetime
 from base import db, collection
 from pprint import pprint
+from bson.objectid import ObjectId
 
 # 插入
 post = {
@@ -13,21 +14,7 @@ post = {
 result = collection.insert_one(post)
 post_id = result.inserted_id
 print("post id is ", post_id)
-
-# 批量插入
-new_posts = [
-    {"_id": 1000,
-     "author": "Curry",
-     "text": "Another post!",
-     "tags": ["bulk", "insert"],
-     "date": datetime.datetime(2017, 11, 12, 11, 14)},
-    {"_id": 1001, "author": "Maxsu",
-     "title": "MongoDB is fun",
-     "text": "and pretty easy too!",
-     "date": datetime.datetime(2019, 11, 10, 10, 45)}
-]
-result = collection.insert_many(new_posts)
-print("Bulk Inserts Result is :", result.inserted_ids)  # Bulk Inserts Result is : [1000, 1001]
+print(type(ObjectId(post_id)))
 
 
 # 列出数据库中的所有集合
